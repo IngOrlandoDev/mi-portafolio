@@ -1,0 +1,127 @@
+import { motion } from "framer-motion";
+
+export default function Hero() {
+  return (
+    <section className="relative bg-black text-white min-h-[92vh] flex items-center overflow-hidden">
+      {/* Glow animado */}
+      <motion.div
+        className="absolute inset-0"
+        animate={{
+          background: [
+            "radial-gradient(circle at 20% 20%, rgba(59,130,246,0.18), transparent 60%)",
+            "radial-gradient(circle at 80% 30%, rgba(37,99,235,0.14), transparent 60%)",
+            "radial-gradient(circle at 40% 80%, rgba(14,165,233,0.16), transparent 60%)",
+            "radial-gradient(circle at 20% 20%, rgba(59,130,246,0.18), transparent 60%)",
+          ],
+        }}
+        transition={{ duration: 14, repeat: Infinity, ease: "linear" }}
+      />
+
+      {/* Grid técnico */}
+      <div className="absolute inset-0 opacity-[0.04] bg-[linear-gradient(to_right,white_1px,transparent_1px),linear-gradient(to_bottom,white_1px,transparent_1px)] bg-[size:40px_40px]" />
+
+      {/* Contenido */}
+      <div className="relative max-w-6xl mx-auto px-6 py-24 w-full">
+        {/* Disponibilidad */}
+        <div className="mb-6">
+          <span className="inline-flex items-center gap-2 px-4 py-2 text-xs tracking-widest uppercase text-white/70 border border-white/10 rounded-full bg-white/5 backdrop-blur">
+            <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+            Disponible para oportunidades como Software Engineer
+          </span>
+        </div>
+
+        {/* Nombre */}
+        <p className="text-sm tracking-[0.3em] text-white/50 mb-4">
+          ING. ORLANDO ARENAS
+        </p>
+
+        {/* Headline fuerte */}
+        <h1 className="text-4xl md:text-7xl font-semibold leading-[1.05] mb-6">
+          Software Engineer
+          <br />
+          <span className="text-white/60 text-2xl md:text-5xl font-medium">
+            ERP · Integraciones · Automatización · Web Apps · APIs
+          </span>
+        </h1>
+
+        {/* <p className="max-w-2xl text-white/70 text-lg leading-relaxed mb-12">
+          Desarrollo y mantengo sistemas empresariales en producción, incluyendo
+          ERPs, intranets y plataformas internas. Especializado en backend con
+          PHP, MySQL e integraciones con servicios externos que impactan
+          directamente la operación del negocio.
+        </p>
+ */}
+        <p className="max-w-2xl text-white/70 text-lg leading-relaxed mb-12">
+          Desarrollador Fullstack con experiencia liderando desarrollo de ERPs,
+          intranets y sistemas empresariales en producción. He evolucionado de
+          programador a coordinador y líder técnico, construyendo soluciones que
+          impactan directamente la operación del negocio. Actualmente enfocado
+          en arquitectura, integraciones y evolución hacia plataformas
+          ecommerce.
+        </p>
+
+        {/* Social proof */}
+        <div className="flex items-center gap-4 mb-10">
+          {/* LinkedIn */}
+          <a
+            href="https://www.linkedin.com/in/ramon-orlando-daniel-arenas-ramirez-0a0986287/"
+            target="_blank"
+            className="w-11 h-11 flex items-center justify-center rounded-full bg-white/5 border border-white/10 hover:border-white/30 transition"
+          >
+            <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+              <path
+                d="M19 0h-14c-2.761 0-5 2.239-5 
+                  5v14c0 2.761 2.239 5 5 5h14c2.762 
+                  0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 
+                  19h-3v-11h3v11zm-1.5-12.268c-.966 
+                  0-1.75-.79-1.75-1.764s.784-1.764 
+                  1.75-1.764 1.75.79 1.75 1.764-.783 
+                  1.764-1.75 1.764zm13.5 
+                  12.268h-3v-5.604c0-3.368-4-3.113-4 
+                  0v5.604h-3v-11h3v1.765c1.396-2.586 
+                  7-2.777 7 2.476v6.759z"
+              />
+            </svg>
+          </a>
+
+          {/* GitHub */}
+          <a
+            href="https://github.com/IngOrlandoDev"
+            target="_blank"
+            className="w-11 h-11 flex items-center justify-center rounded-full bg-white/5 border border-white/10 hover:border-white/30 transition"
+          >
+            <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+              <path
+                d="M12 0C5.37 0 0 5.37 0 12c0 
+                  5.31 3.435 9.795 8.205 11.385.6.11.825-.26.825-.58 
+                  0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 
+                  1.62.87 1.845 1.23 1.08 1.815 2.805 
+                  1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 
+                  0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 
+                  0 0 1.005-.315 3.3 1.23.96-.27 
+                  1.98-.405 3-.405s2.04.135 
+                  3 .405c2.295-1.56 3.3-1.23 
+                  3.3-1.23.66 1.65.24 2.88.12 
+                  3.18.765.84 1.23 1.905 1.23 
+                  3.225 0 4.605-2.805 5.625-5.475 
+                  5.925.435.375.81 1.095.81 
+                  2.22 0 1.605-.015 2.895-.015 
+                  3.3 0 .315.225.69.825.57A12.02 
+                  12.02 0 0024 12c0-6.63-5.37-12-12-12z"
+              />
+            </svg>
+          </a>
+
+          {/* CV */}
+          <a
+            href="/cv-orlando-arenas.pdf"
+            download
+            className="ml-3 px-5 py-2 text-sm font-medium border border-white/20 rounded-lg hover:bg-white/5 transition"
+          >
+            Descargar CV
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
