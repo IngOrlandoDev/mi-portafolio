@@ -39,7 +39,7 @@ export default function Hero() {
         <h1 className="text-4xl md:text-7xl font-semibold leading-[1.05] mb-6">
           Software Engineer
           <br />
-          <span className="text-white/60 text-2xl md:text-5xl font-medium">
+          <span className="text-white/60 text-xl md:text-3xl font-medium">
             ERP · Integraciones · Automatización · Web Apps · APIs
           </span>
         </h1>
