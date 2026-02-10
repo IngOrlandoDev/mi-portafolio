@@ -7,7 +7,7 @@ export default function Contact() {
       className="bg-black text-white py-16 relative overflow-hidden"
     >
       <div className="max-w-6xl mx-auto px-6 relative z-10">
-        {/* Header editorial consistente */}
+        {/* Header */}
         <div className="text-center mb-16">
           <p className="text-xs tracking-widest text-white/40 mb-3">CONTACTO</p>
 
@@ -18,10 +18,10 @@ export default function Contact() {
           <div className="w-16 h-[2px] bg-blue-400/70 mx-auto mt-4 rounded-full" />
         </div>
 
-        <div className="grid md:grid-cols-2 gap-16 items-start">
+        <div className="grid md:grid-cols-2 gap-14 items-start">
           {/* Columna izquierda */}
           <div className="space-y-7">
-            <p className="text-white/70 text-md leading-relaxed">
+            <p className="text-white/70 leading-relaxed">
               Actualmente estoy abierto a oportunidades como Software Engineer,
               Fullstack o Backend Developer participando en proyectos reales:
               ERPs, plataformas internas, automatización e integraciones.
@@ -32,18 +32,10 @@ export default function Contact() {
               construir software estable en producción.
             </p>
 
-            {/* botones principales */}
+            {/* Botón CV */}
             <div className="flex flex-wrap gap-4 pt-4">
-              {/* <a
-                href="mailto:contacto@arenasdigital.com"
-                className="bg-blue-500 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-600 transition"
-              >
-                Enviar correo
-              </a> */}
-
               <a
-                href="public/cv.pdf"
-                target="_blank"
+                href="/cv.pdf"
                 download
                 className="inline-flex items-center gap-2 border border-blue-500/50 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-500/10 transition"
               >
@@ -54,9 +46,9 @@ export default function Contact() {
           </div>
 
           {/* Columna derecha */}
-          <div className="relative border border-white/10 rounded-2xl p-9 bg-white/[0.03] backdrop-blur-md space-y-8">
-            {/* glow sutil */}
-            <div className="absolute -top-12 -right-12 w-44 h-44 bg-blue-500/5 blur-2xl rounded-full pointer-events-none" />
+          <div className="relative border border-white/10 rounded-2xl p-8 bg-white/[0.02] space-y-8">
+            {/* glow ligero */}
+            <div className="absolute -top-10 -right-10 w-32 h-32 bg-blue-500/10 blur-2xl rounded-full pointer-events-none" />
 
             <div>
               <p className="text-xs tracking-widest text-white/40 mb-2">

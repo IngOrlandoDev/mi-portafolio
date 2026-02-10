@@ -1,13 +1,15 @@
 export type Project = {
+  id: string;
   title: string;
   description: string;
   impact: string;
   stack: string[];
-  image?: string; // aquí irán los screenshots después
+  image?: string;
 };
 
 export const projects: Project[] = [
   {
+    id: "erp-express",
     title: "ERP Empresarial — Express MG",
     description:
       "Sistema ERP desarrollado desde cero para la gestión operativa interna, usuarios, recursos humanos, unidades, reservaciones y comunicación organizacional.",
@@ -17,6 +19,7 @@ export const projects: Project[] = [
     image: "../img/expressmg.jpg",
   },
   {
+    id: "intranet-medica",
     title: "Intranet Corporativa — Médica Campestre",
     description:
       "Plataforma interna para gestión de solicitudes, comunicación y procesos administrativos conectada con ERP de nómina.",
@@ -25,6 +28,7 @@ export const projects: Project[] = [
     stack: ["PHP", "MySQL", "JavaScript", "jQuery", "APIs REST"],
   },
   {
+    id: "landing-express",
     title: "Landing Corporativa — Express MG",
     description:
       "Sitio corporativo orientado a clientes B2B y directivos para presentación de servicios logísticos.",
@@ -33,6 +37,7 @@ export const projects: Project[] = [
     stack: ["PHP", "Tailwind", "JavaScript", "MySQL", "PHPMailer"],
   },
   {
+    id: "portfolio-react",
     title: "Portafolio Fullstack — React",
     description:
       "Portafolio profesional desarrollado con React, TypeScript y Tailwind enfocado en oportunidades laborales y posicionamiento como desarrollador fullstack.",

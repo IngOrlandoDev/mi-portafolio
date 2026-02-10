@@ -3,17 +3,11 @@ import { projects } from "../../data/projects";
 
 export default function Projects() {
   return (
-    <section
-      id="projects"
-      className="bg-black text-white py-16 relative overflow-hidden"
-    >
-      {/* Glow principal fondo (CSS, no framer) */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-blue-500/10 blur-[120px] rounded-full animate-glow-slow z-0" />
+    <section id="projects" className="bg-black text-white py-16 relative">
+      {/* glow optimizado (MUCHO más ligero) */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[400px] bg-blue-500/10 blur-2xl rounded-full pointer-events-none" />
 
-      {/* Glow secundario */}
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-400/8 blur-[120px] rounded-full animate-glow-slower z-0" />
-
-      <div className="max-w-6xl mx-auto px-6 relative z-10">
+      <div className="max-w-6xl mx-auto px-6 relative">
         <div className="text-center mb-16">
           <p className="text-xs tracking-widest text-white/40 mb-3">
             PORTAFOLIO
@@ -26,9 +20,13 @@ export default function Projects() {
           <div className="w-16 h-[2px] bg-blue-400/70 mx-auto mt-4 rounded-full" />
         </div>
 
-        <div className="grid md:grid-cols-2 gap-14">
-          {projects.map((project, index) => (
-            <ProjectCard key={index} project={project} />
+        {/* grid optimizado */}
+        <div className="grid md:grid-cols-2 gap-10">
+          {projects.map((project) => (
+            <ProjectCard
+              key={project.title} // key estable
+              project={project}
+            />
           ))}
         </div>
       </div>

@@ -1,3 +1,4 @@
+import { memo } from "react";
 import {
   SiPhp,
   SiMysql,
@@ -12,8 +13,10 @@ import {
   SiSap,
 } from "react-icons/si";
 
-// Función para asignar iconos a cada stack
-const getIcon = (tech: string) => {
+import type { Project } from "../../data/projects";
+
+// Icon memoizado (evita recalcular SVG en cada render)
+const Icon = memo(({ tech }: { tech: string }) => {
   switch (tech) {
     case "PHP":
       return <SiPhp className="w-4 h-4 text-blue-400" />;
@@ -40,22 +43,21 @@ const getIcon = (tech: string) => {
     default:
       return null;
   }
-};
-
-import type { Project } from "../../data/projects";
+});
 
 export default function ProjectCard({ project }: { project: Project }) {
   return (
-    <div className="group bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-md relative overflow-hidden transition-all duration-300 hover:border-white/20 hover:bg-white/[0.07] hover:-translate-y-1">
-      {/* Glow hover */}
-      <div className="absolute -top-10 -right-10 w-40 h-40 bg-blue-500/10 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+    <div className="group bg-white/5 border border-white/10 rounded-2xl p-6 relative overflow-hidden transition-all duration-300 hover:border-white/20 hover:bg-white/[0.07]">
+      {/* glow optimizado */}
+      <div className="absolute -top-10 -right-10 w-32 h-32 bg-blue-500/10 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-      {/* imagen futura */}
-      <div className="h-40 rounded-lg mb-6 flex items-center justify-center text-white/30 text-sm bg-white/5 border border-white/10">
+      {/* imagen */}
+      <div className="h-40 rounded-lg mb-6 flex items-center justify-center text-white/30 text-sm bg-white/5 border border-white/10 overflow-hidden">
         {project.image ? (
           <img
-            src={project.image}
+            src={`/img/${project.image}`}
             alt={project.title}
+            loading="lazy"
             className="w-full h-full object-cover rounded-lg"
           />
         ) : (
@@ -81,9 +83,9 @@ export default function ProjectCard({ project }: { project: Project }) {
         {project.stack.map((tech, i) => (
           <span
             key={i}
-            className="flex items-center gap-1 text-xs px-3 py-1 bg-blue-500/5 border border-blue-500/20 rounded-full hover:bg-blue-500/10 transition"
+            className="flex items-center gap-1 text-xs px-3 py-1 bg-blue-500/5 border border-blue-500/20 rounded-full"
           >
-            {getIcon(tech)}
+            <Icon tech={tech} />
             {tech}
           </span>
         ))}

@@ -1,3 +1,4 @@
+import { memo } from "react";
 import {
   SiPhp,
   SiMysql,
@@ -20,8 +21,8 @@ type ExperienceItem = {
   stack: string[];
 };
 
-// Función para asignar iconos a cada stack
-const getIcon = (tech: string) => {
+// Memo para evitar rerenders innecesarios
+const Icon = memo(({ tech }: { tech: string }) => {
   switch (tech) {
     case "PHP":
       return <SiPhp className="w-4 h-4 text-blue-400" />;
@@ -48,7 +49,7 @@ const getIcon = (tech: string) => {
     default:
       return null;
   }
-};
+});
 
 const experiences: ExperienceItem[] = [
   {
@@ -125,16 +126,12 @@ export default function Experience() {
       id="experience"
       className="bg-black text-white py-16 relative overflow-hidden"
     >
-      {/* Glow principal de fondo (animación CSS) */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] bg-blue-500/10 blur-[140px] rounded-full animate-glow-slow z-0" />
+      {/* Glows optimizados */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-blue-500/10 blur-[80px] rounded-full z-0" />
 
-      {/* Glow secundario */}
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-400/8 blur-[120px] rounded-full animate-glow-slower z-0" />
+      <div className="absolute bottom-0 right-0 w-[350px] h-[350px] bg-blue-400/10 blur-[70px] rounded-full z-0" />
 
       <div className="max-w-6xl mx-auto px-6 relative z-10">
-        {/* Título centrado con gradiente */}
-
-        {/* Header de sección consistente */}
         <div className="text-center mb-16">
           <p className="text-xs tracking-widest text-white/40 mb-3">
             TRAYECTORIA
@@ -147,29 +144,24 @@ export default function Experience() {
           <div className="w-16 h-[2px] bg-blue-400/70 mx-auto mt-4 rounded-full" />
         </div>
 
-        <div className="space-y-12">
+        <div className="space-y-10">
           {experiences.map((exp, index) => (
             <div
               key={index}
-              className="relative border border-white/10 rounded-2xl p-9 hover:border-white/20 hover:bg-white/[0.03] transition-all bg-white/[0.015] backdrop-blur-md"
+              className="border border-white/10 rounded-2xl p-8 hover:border-white/20 hover:bg-white/[0.03] transition bg-white/[0.015]"
             >
-              {/* Header */}
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-7">
-                <div>
-                  <h3 className="text-xl font-semibold mb-1 text-blue-400">
-                    {exp.role}
-                  </h3>
-                  <p className="text-white/40 text-sm">{exp.company}</p>
-                </div>
+              <div className="mb-6">
+                <h3 className="text-xl font-semibold mb-1 text-blue-400">
+                  {exp.role}
+                </h3>
+                <p className="text-white/40 text-sm">{exp.company}</p>
               </div>
 
-              {/* Description */}
-              <p className="text-white/70 mb-7 leading-relaxed text-[15px]">
+              <p className="text-white/70 mb-6 leading-relaxed text-[15px]">
                 {exp.description}
               </p>
 
-              {/* Achievements */}
-              <ul className="space-y-3 mb-7">
+              <ul className="space-y-2 mb-6">
                 {exp.achievements.map((item, i) => (
                   <li key={i} className="text-white/60 text-sm flex gap-3">
                     <span className="text-blue-400">•</span>
@@ -178,14 +170,13 @@ export default function Experience() {
                 ))}
               </ul>
 
-              {/* Stack */}
               <div className="flex flex-wrap gap-2">
                 {exp.stack.map((tech, i) => (
                   <span
                     key={i}
-                    className="flex items-center gap-1 text-xs px-3 py-1 bg-blue-500/5 border border-blue-500/20 rounded-full hover:bg-blue-500/10 transition"
+                    className="flex items-center gap-1 text-xs px-3 py-1 bg-blue-500/5 border border-blue-500/20 rounded-full"
                   >
-                    {getIcon(tech)}
+                    <Icon tech={tech} />
                     {tech}
                   </span>
                 ))}
