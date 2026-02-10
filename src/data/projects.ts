@@ -14,6 +14,7 @@ export const projects: Project[] = [
     impact:
       "Utilizado por más de 150 usuarios. Implementación de WebSockets para notificaciones en tiempo real e integración de mapas y visualización de datos.",
     stack: ["PHP", "MySQL", "JavaScript", "WebSockets", "Mapbox", "Power BI"],
+    image: "../../public/img/expressmg.jpeg",
   },
   {
     title: "Intranet Corporativa — Médica Campestre",

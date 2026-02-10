@@ -52,7 +52,17 @@ export default function ProjectCard({ project }: { project: Project }) {
 
       {/* imagen futura */}
       <div className="h-40 rounded-lg mb-6 flex items-center justify-center text-white/30 text-sm bg-white/5 border border-white/10">
-        Screenshot próximamente
+        {project.image ? (
+          <img
+            src={project.image}
+            alt={project.title}
+            className="w-full h-full object-cover rounded-lg"
+          />
+        ) : (
+          <div className="flex items-center justify-center h-full text-white/30 text-sm">
+            Screenshot próximamente
+          </div>
+        )}
       </div>
 
       {/* título */}
