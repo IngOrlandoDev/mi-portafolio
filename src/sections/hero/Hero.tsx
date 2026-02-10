@@ -4,31 +4,34 @@ import { FiDownload } from "react-icons/fi";
 export default function Hero() {
   return (
     <section className="relative bg-black text-white min-h-[100vh] flex items-center overflow-hidden">
-      {/* Glow animado */}
+      {/* Glow animado SOLO en desktop */}
       <motion.div
-        className="absolute inset-0 z-0"
+        className="hidden md:block absolute inset-0 z-0"
         animate={{
           background: [
-            "radial-gradient(circle at 20% 20%, rgba(59,130,246,0.18), transparent 60%)",
-            "radial-gradient(circle at 80% 30%, rgba(37,99,235,0.14), transparent 60%)",
-            "radial-gradient(circle at 40% 80%, rgba(14,165,233,0.16), transparent 60%)",
-            "radial-gradient(circle at 20% 20%, rgba(59,130,246,0.18), transparent 60%)",
+            "radial-gradient(circle at 20% 20%, rgba(59,130,246,0.16), transparent 60%)",
+            "radial-gradient(circle at 80% 30%, rgba(37,99,235,0.12), transparent 60%)",
+            "radial-gradient(circle at 40% 80%, rgba(14,165,233,0.14), transparent 60%)",
+            "radial-gradient(circle at 20% 20%, rgba(59,130,246,0.16), transparent 60%)",
           ],
         }}
-        transition={{ duration: 14, repeat: Infinity, ease: "linear" }}
+        transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
       />
 
-      {/* Grid técnico con blur */}
-      <div className="absolute inset-0 opacity-[0.04] bg-[linear-gradient(to_right,white_1px,transparent_1px),linear-gradient(to_bottom,white_1px,transparent_1px)] bg-[size:40px_40px] z-0 blur-sm" />
+      {/* Glow estático para mobile */}
+      <div className="md:hidden absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,rgba(59,130,246,0.12),transparent_70%)]" />
 
-      {/* Fade al final de la sección */}
-      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black to-transparent z-0 pointer-events-none" />
+      {/* Grid técnico */}
+      <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,white_1px,transparent_1px),linear-gradient(to_bottom,white_1px,transparent_1px)] bg-[size:36px_36px] z-0" />
+
+      {/* Fade inferior */}
+      <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-black to-transparent z-0 pointer-events-none" />
 
       {/* Contenido */}
       <div className="relative container mx-auto px-6 py-16 z-10 max-w-6xl">
         {/* Disponibilidad */}
         <div className="mb-6">
-          <span className="inline-flex items-center gap-2 px-4 py-2 text-xs tracking-widest uppercase text-white/70 border border-white/10 rounded-full bg-white/5 backdrop-blur">
+          <span className="inline-flex items-center gap-2 px-4 py-2 text-xs tracking-widest uppercase text-white/70 border border-white/10 rounded-full bg-white/5 md:backdrop-blur">
             <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
             Disponible para oportunidades como Desarrollador
           </span>
@@ -80,13 +83,13 @@ export default function Hero() {
             aria-label="GitHub"
           >
             <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
-              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.11.825-.26.825-.58 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385..." />
             </svg>
           </a>
 
           {/* CV */}
           <a
-            href="public/cv.pdf"
+            href="/cv.pdf"
             download
             className="ml-3 inline-flex items-center gap-2 px-5 py-2 text-sm font-medium border border-white/20 rounded-lg hover:bg-white/5 transition"
           >
