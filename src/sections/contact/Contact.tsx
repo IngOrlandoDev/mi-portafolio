@@ -1,3 +1,5 @@
+import { FiDownload } from "react-icons/fi";
+
 export default function Contact() {
   return (
     <section
@@ -19,31 +21,33 @@ export default function Contact() {
         <div className="grid md:grid-cols-2 gap-16 items-start">
           {/* Columna izquierda */}
           <div className="space-y-7">
-            <p className="text-white/70 text-lg leading-relaxed">
+            <p className="text-white/70 text-md leading-relaxed">
               Actualmente estoy abierto a oportunidades como Software Engineer,
               Fullstack o Backend Developer participando en proyectos reales:
               ERPs, plataformas internas, automatización e integraciones.
             </p>
 
-            <p className="text-white/60 leading-relaxed">
+            <p className="text-white/80 leading-relaxed">
               Busco integrarme rápido a equipos, entender procesos de negocio y
               construir software estable en producción.
             </p>
 
             {/* botones principales */}
             <div className="flex flex-wrap gap-4 pt-4">
-              <a
+              {/* <a
                 href="mailto:contacto@arenasdigital.com"
                 className="bg-blue-500 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-600 transition"
               >
                 Enviar correo
-              </a>
+              </a> */}
 
               <a
-                href="/cv.pdf"
+                href="public/cv.pdf"
                 target="_blank"
-                className="border border-blue-500/50 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-500/10 transition"
+                download
+                className="inline-flex items-center gap-2 border border-blue-500/50 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-500/10 transition"
               >
+                <FiDownload className="w-4 h-4" />
                 Descargar CV
               </a>
             </div>

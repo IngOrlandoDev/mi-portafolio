@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { FiDownload } from "react-icons/fi";
 
 export default function Hero() {
   return (
@@ -85,10 +86,11 @@ export default function Hero() {
 
           {/* CV */}
           <a
-            href="/cv-orlando-arenas.pdf"
+            href="public/cv.pdf"
             download
-            className="ml-3 px-5 py-2 text-sm font-medium border border-white/20 rounded-lg hover:bg-white/5 transition"
+            className="ml-3 inline-flex items-center gap-2 px-5 py-2 text-sm font-medium border border-white/20 rounded-lg hover:bg-white/5 transition"
           >
+            <FiDownload className="w-4 h-4" />
             Descargar CV
           </a>
         </div>
