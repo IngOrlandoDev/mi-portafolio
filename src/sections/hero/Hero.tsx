@@ -3,7 +3,7 @@ import { FiDownload } from "react-icons/fi";
 
 export default function Hero() {
   return (
-    <section className="relative bg-black text-white min-h-[100vh] flex items-center overflow-hidden">
+    <section className="relative bg-black text-white min-h-[100vh] flex items-center overflow-hidden will-change-transform">
       {/* Glow animado SOLO en desktop */}
       <motion.div
         className="hidden md:block absolute inset-0 z-0"
