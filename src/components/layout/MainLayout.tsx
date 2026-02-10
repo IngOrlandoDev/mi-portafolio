@@ -10,7 +10,7 @@ export default function MainLayout({
     <div className="bg-black text-white min-h-screen">
       <Navbar />
 
-      <main className="container mx-auto px-6">{children}</main>
+      <main className="">{children}</main>
 
       <Footer />
     </div>

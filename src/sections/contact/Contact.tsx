@@ -2,12 +2,19 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="bg-black text-white py-28 relative overflow-hidden"
+      className="bg-black text-white py-16 relative overflow-hidden"
     >
       <div className="max-w-6xl mx-auto px-6 relative z-10">
-        <h2 className="text-3xl md:text-4xl font-semibold mb-16 text-blue-400">
-          Contacto
-        </h2>
+        {/* Header editorial consistente */}
+        <div className="text-center mb-16">
+          <p className="text-xs tracking-widest text-white/40 mb-3">CONTACTO</p>
+
+          <h2 className="text-2xl md:text-3xl font-semibold text-white">
+            Trabajemos juntos
+          </h2>
+
+          <div className="w-16 h-[2px] bg-blue-400/70 mx-auto mt-4 rounded-full" />
+        </div>
 
         <div className="grid md:grid-cols-2 gap-16 items-start">
           {/* Columna izquierda */}

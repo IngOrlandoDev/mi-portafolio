@@ -1,4 +1,16 @@
-import { motion } from "framer-motion";
+import {
+  SiPhp,
+  SiMysql,
+  SiJavascript,
+  SiTypescript,
+  SiReact,
+  SiTailwindcss,
+  SiPython,
+  SiHtml5,
+  SiCss3,
+  SiJquery,
+  SiSap,
+} from "react-icons/si";
 
 type ExperienceItem = {
   company: string;
@@ -6,6 +18,36 @@ type ExperienceItem = {
   description: string;
   achievements: string[];
   stack: string[];
+};
+
+// Función para asignar iconos a cada stack
+const getIcon = (tech: string) => {
+  switch (tech) {
+    case "PHP":
+      return <SiPhp className="w-4 h-4 text-blue-400" />;
+    case "MySQL":
+      return <SiMysql className="w-4 h-4 text-blue-400" />;
+    case "JavaScript":
+      return <SiJavascript className="w-4 h-4 text-yellow-400" />;
+    case "TypeScript":
+      return <SiTypescript className="w-4 h-4 text-blue-500" />;
+    case "React":
+      return <SiReact className="w-4 h-4 text-blue-400" />;
+    case "Tailwind":
+      return <SiTailwindcss className="w-4 h-4 text-cyan-400" />;
+    case "Python":
+      return <SiPython className="w-4 h-4 text-yellow-300" />;
+    case "HTML":
+      return <SiHtml5 className="w-4 h-4 text-orange-500" />;
+    case "CSS":
+      return <SiCss3 className="w-4 h-4 text-blue-500" />;
+    case "jQuery":
+      return <SiJquery className="w-4 h-4 text-blue-300" />;
+    case "SAP HANA":
+      return <SiSap className="w-4 h-4 text-green-500" />;
+    default:
+      return null;
+  }
 };
 
 const experiences: ExperienceItem[] = [
@@ -81,28 +123,29 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="bg-black text-white py-28 relative overflow-hidden"
+      className="bg-black text-white py-16 relative overflow-hidden"
     >
-      {/* Glow principal de fondo */}
-      <motion.div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] bg-blue-500/10 blur-[140px] rounded-full will-change-transform z-0"
-        initial={{ x: 0, y: 0 }}
-        animate={{ x: [0, 40, -30, 0], y: [0, 30, -20, 0] }}
-        transition={{ duration: 25, repeat: Infinity, ease: "easeInOut" }}
-      />
+      {/* Glow principal de fondo (animación CSS) */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] bg-blue-500/10 blur-[140px] rounded-full animate-glow-slow z-0" />
 
       {/* Glow secundario */}
-      <motion.div
-        className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-400/8 blur-[120px] rounded-full will-change-transform z-0"
-        initial={{ x: 0, y: 0 }}
-        animate={{ x: [0, -30, 20, 0], y: [0, -20, 10, 0] }}
-        transition={{ duration: 28, repeat: Infinity, ease: "easeInOut" }}
-      />
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-400/8 blur-[120px] rounded-full animate-glow-slower z-0" />
 
       <div className="max-w-6xl mx-auto px-6 relative z-10">
-        <h2 className="text-3xl md:text-4xl font-semibold mb-16 text-blue-400">
-          Experiencia profesional
-        </h2>
+        {/* Título centrado con gradiente */}
+
+        {/* Header de sección consistente */}
+        <div className="text-center mb-16">
+          <p className="text-xs tracking-widest text-white/40 mb-3">
+            TRAYECTORIA
+          </p>
+
+          <h2 className="text-2xl md:text-3xl font-semibold text-white">
+            Experiencia profesional
+          </h2>
+
+          <div className="w-16 h-[2px] bg-blue-400/70 mx-auto mt-4 rounded-full" />
+        </div>
 
         <div className="space-y-12">
           {experiences.map((exp, index) => (
@@ -110,9 +153,6 @@ export default function Experience() {
               key={index}
               className="relative border border-white/10 rounded-2xl p-9 hover:border-white/20 hover:bg-white/[0.03] transition-all bg-white/[0.015] backdrop-blur-md"
             >
-              {/* Timeline punto */}
-              <div className="absolute -left-4 top-10 w-3 h-3 rounded-full bg-blue-400/60 animate-pulse" />
-
               {/* Header */}
               <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-7">
                 <div>
@@ -132,7 +172,7 @@ export default function Experience() {
               <ul className="space-y-3 mb-7">
                 {exp.achievements.map((item, i) => (
                   <li key={i} className="text-white/60 text-sm flex gap-3">
-                    <span className="text-blue-400">—</span>
+                    <span className="text-blue-400">•</span>
                     {item}
                   </li>
                 ))}
@@ -143,8 +183,9 @@ export default function Experience() {
                 {exp.stack.map((tech, i) => (
                   <span
                     key={i}
-                    className="text-xs px-3 py-1 bg-blue-500/5 border border-blue-500/20 rounded-full hover:bg-blue-500/10 transition"
+                    className="flex items-center gap-1 text-xs px-3 py-1 bg-blue-500/5 border border-blue-500/20 rounded-full hover:bg-blue-500/10 transition"
                   >
+                    {getIcon(tech)}
                     {tech}
                   </span>
                 ))}

@@ -1,22 +1,30 @@
 import ProjectCard from "./ProjectCard";
 import { projects } from "../../data/projects";
-import { motion } from "framer-motion";
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-24 relative overflow-hidden">
-      {/* Glow de fondo general */}
-      <motion.div
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-blue-500/10 blur-[120px] rounded-full z-0"
-        initial={{ scale: 1 }}
-        animate={{ scale: [1, 1.1, 1] }}
-        transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
-      />
+    <section
+      id="projects"
+      className="bg-black text-white py-16 relative overflow-hidden"
+    >
+      {/* Glow principal fondo (CSS, no framer) */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-blue-500/10 blur-[120px] rounded-full animate-glow-slow z-0" />
+
+      {/* Glow secundario */}
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-400/8 blur-[120px] rounded-full animate-glow-slower z-0" />
 
       <div className="max-w-6xl mx-auto px-6 relative z-10">
-        <h2 className="text-3xl md:text-4xl font-semibold mb-16 text-blue-400">
-          Proyectos Destacados
-        </h2>
+        <div className="text-center mb-16">
+          <p className="text-xs tracking-widest text-white/40 mb-3">
+            PORTAFOLIO
+          </p>
+
+          <h2 className="text-2xl md:text-3xl font-semibold text-white">
+            Proyectos destacados
+          </h2>
+
+          <div className="w-16 h-[2px] bg-blue-400/70 mx-auto mt-4 rounded-full" />
+        </div>
 
         <div className="grid md:grid-cols-2 gap-14">
           {projects.map((project, index) => (
