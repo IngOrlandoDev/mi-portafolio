@@ -26,6 +26,7 @@ export const projects: Project[] = [
     impact:
       "Automatización de procesos de RH y nómina. Integración con servicios externos para centralización de información organizacional.",
     stack: ["PHP", "MySQL", "JavaScript", "jQuery", "APIs REST"],
+    image: "../img/medicacampestre.jpg",
   },
   {
     id: "landing-express",
@@ -35,6 +36,7 @@ export const projects: Project[] = [
     impact:
       "Mejora en la presencia digital y captación de leads empresariales.",
     stack: ["PHP", "Tailwind", "JavaScript", "MySQL", "PHPMailer"],
+    image: "../img/paginaexpressmg.jpg",
   },
   {
     id: "portfolio-react",
@@ -44,5 +46,6 @@ export const projects: Project[] = [
     impact:
       "Proyecto enfocado en demostrar arquitectura frontend moderna y experiencia profesional.",
     stack: ["React", "TypeScript", "Tailwind", "Vite"],
+    image: "../img/portafolio.jpg",
   },
 ];
