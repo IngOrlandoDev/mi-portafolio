@@ -52,17 +52,17 @@ export default function Contact() {
 
             <div>
               <p className="text-xs tracking-widest text-white/40 mb-2">
-                CORREO PRINCIPAL
+                CORREO
               </p>
               <a
                 href="mailto:contacto@arenasdigital.com"
                 className="text-lg font-medium hover:text-blue-400 transition"
               >
-                contacto@arenasdigital.com
+                orlando.arenas31@gmail.com
               </a>
             </div>
 
-            <div>
+            {/* <div>
               <p className="text-xs tracking-widest text-white/40 mb-2">
                 CORREO ALTERNO
               </p>
@@ -72,7 +72,7 @@ export default function Contact() {
               >
                 orlando.arenas31@gmail.com
               </a>
-            </div>
+            </div> */}
 
             <div>
               <p className="text-xs tracking-widest text-white/40 mb-2">
