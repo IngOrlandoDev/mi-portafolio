@@ -50,6 +50,13 @@ export default function About() {
               Clean Code.
             </p>
 
+            <p>
+              Recientemente integré pipelines de CI/CD con GitHub Actions y
+              despliegues automatizados en Vercel, asegurando builds
+              consistentes, control de versiones y entrega continua de cambios
+              en producción.
+            </p>
+
             <div className="pt-6 border-t border-white/10">
               <p className="text-white font-medium">
                 Mi enfoque es convertir procesos complejos en software estable,
@@ -97,6 +104,16 @@ export default function About() {
               </p>
               <p className="font-medium">
                 MVC, SOLID, Clean Code y diseño mantenible
+              </p>
+            </div>
+
+            <div>
+              <p className="text-xs tracking-widest text-white/40 mb-2">
+                DEVOPS
+              </p>
+              <p className="font-medium">
+                GitHub Actions, CI/CD, despliegue automático, control de builds
+                y versionamiento
               </p>
             </div>
 
